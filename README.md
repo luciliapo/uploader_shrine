@@ -23,3 +23,5 @@ Things you may want to cover:
 
 * ...
 # uploader_shrine
+
+Extracted from: https://gorails.com/episodes/file-uploading-with-shrine
