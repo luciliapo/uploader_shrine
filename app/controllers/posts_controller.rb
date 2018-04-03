@@ -19,6 +19,7 @@ class PostsController < ApplicationController
 
   # GET /posts/1/edit
   def edit
+    @attachments = @post.post_attachments
   end
 
   # POST /posts

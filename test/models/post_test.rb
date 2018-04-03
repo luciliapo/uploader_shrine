@@ -1,7 +1,12 @@
 require 'test_helper'
 
 class PostTest < ActiveSupport::TestCase
-  # test "the truth" do
-  #   assert true
-  # end
+
+  test "description validation creating posts" do
+    p = Post.new()
+    assert_raises ActiveRecord::RecordInvalid do
+      assert p.save!
+    end
+  end
+
 end

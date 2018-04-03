@@ -1,5 +1,5 @@
 class Post < ApplicationRecord
-  include ImageUploader::Attachment.new(:image) # adds an `image` virtual attribute
-  
+  has_many :attachments
   validates :description, presence: true
+  accepts_nested_attributes_for :attachments
 end

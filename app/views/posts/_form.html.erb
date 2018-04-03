@@ -12,22 +12,16 @@
   <% end %>
 
   <div class="field">
-    <% if post.image.present? %>
-      <%= image_tag post.image.url %>
+    <%= f.fields_for(post.attachments) do |attachment_form| %>
+      <%= attachment_form.label :image %>
+      <%= attachment_form.file_field :image, :multiple => true %>
     <% end %>
-    
-    <%= f.label :image %>
-    <%= f.hidden_field :image, value: f.object.cached_image_data %>
-    <%= f.file_field :image %>
   </div>
 
   <div class="field">
     <%= f.label :description %>
     <%= f.text_area :description %>
   </div>
-
-
-
 
   <div class="actions">
     <%= f.submit %>
